@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head><title>AWS SSO Regularizer Options</title></head>
+  <body>
+
+    Minimum session duration (hours):
+    <select id="expiry">
+     <option value="1">1</option>
+     <option value="2">2</option>
+     <option value="3">3</option>
+     <option value="4">4</option>
+     <option value="5">5</option>
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+    </select>
+    <br/>
+    <label>
+      Identity store ID (e.g. d-xxxxxxxxx) or alias; leave blank to affect all AWS identity stores:
+      <input type="text" id="sso-domain">
+    </label>
+
+    <div id="status"></div>
+    <button id="save">Save</button>
+
+    <script src="options.js"></script>
+  </body>
+</html>
