@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "AWS SSO Regularizer",
+  "version": "1.0",
+  "description": "Makes your `aws sso login` token lifetimes consistent",
+  "host_permissions": ["<all_urls>"],
+  "permissions": ["cookies"],
+  "content_scripts": [
+    {
+      "js": ["scripts/content.js"],
+      "matches": ["https://device.sso.us-west-2.amazonaws.com/*"]
+    }
+  ],
+  "background": {
+    "service_worker": "bg.js"
+  }
+}
