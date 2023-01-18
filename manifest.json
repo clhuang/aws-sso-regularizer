@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "AWS SSO Regularizer",
-  "version": "1.1",
+  "version": "1.2",
   "description": "Makes your `aws sso login` token lifetimes consistent",
   "host_permissions": ["*://*.awsapps.com/"],
   "permissions": ["cookies", "storage"],
