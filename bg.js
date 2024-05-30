@@ -5,11 +5,11 @@ function buildUrl(domain, path) {
 }
 
 async function clearSsoExpiringCookies() {
-  const { expiry, ssoDomain } = await chrome.storage.sync.get({
-    expiry: 8,
+  const { expiryNew, ssoDomain } = await chrome.storage.sync.get({
+    expiryNew: 84,
     ssoDomain: '',
   });
-  const EXPIRE_AFTER = expiry * 3600;
+  const EXPIRE_AFTER = expiryNew * 3600;
   const cookies = await chrome.cookies.getAll({
     domain: `${ssoDomain}.awsapps.com`,
     session: false,

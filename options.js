@@ -3,7 +3,7 @@ async function saveOptions() {
   const expiry = document.getElementById('expiry').value;
   const ssoDomain = document.getElementById('sso-domain').value;
   await chrome.storage.sync.set({
-    expiry: +expiry,
+    expiryNew: +expiry,
     ssoDomain,
   });
   // Update status to let user know options were saved.
@@ -15,12 +15,12 @@ async function saveOptions() {
 }
 
 async function restoreOptions() {
-  const { ssoDomain, expiry } = await chrome.storage.sync.get({
-    expiry: 8,
+  const { ssoDomain, expiryNew } = await chrome.storage.sync.get({
+    expiryNew: 84,
     ssoDomain: '',
   });
   document.getElementById('sso-domain').value = ssoDomain;
-  document.getElementById('expiry').value = expiry.toString();
+  document.getElementById('expiry').value = expiryNew.toString();
 }
 document.addEventListener('DOMContentLoaded', restoreOptions);
 document.getElementById('save').addEventListener('click', saveOptions);
